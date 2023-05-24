@@ -1,0 +1,66 @@
+{
+  "name": "attributes",
+  "primary": ["id"],
+  "softDelete": true,
+  "persistence": {
+    "table": "access_attributes"
+  },
+  "mixins": ["timestamps"],
+  "attributes": {
+    "id": {
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "scru_pid",
+              "prefix": "attr"
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        }
+      }
+    },
+    "user_id": {
+      "label": "user_id",
+      "operations": {}
+    },
+    "tenant_id": {
+      "label": "Tenant",
+      "operations": {}
+    },
+    "type": {
+      "label": "type",
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "value": {
+      "label": "value",
+      "operations": {
+        "create": {
+          "validate": [
+            { "type": "required" },
+            {
+              "type": "unique",
+              "table": "access_attributes",
+              "column": "value",
+              "includeAttributes": ["type", "tenant_id"],
+              "excludeAttributes": []
+            }
+          ]
+        }
+      }
+    },
+    "verified_at": {
+      "label": "verified_at",
+      "operations": {
+        "create": {
+          "generate": "datetime",
+          "validate": [{ "type": "notempty" }, { "type": "date_iso" }]
+        }
+      }
+    }
+  }
+}

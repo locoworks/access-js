@@ -1,0 +1,66 @@
+{
+  "name": "keys",
+  "primary": ["id"],
+  "softDelete": true,
+  "persistence": {
+    "table": "access_keys"
+  },
+  "mixins": ["timestamps"],
+  "attributes": {
+    "id": {
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "scru_pid",
+              "prefix": "akey"
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        }
+      }
+    },
+    "account_id": {
+      "label": "account_id",
+      "operations": {}
+    },
+    "name": {
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "mode": {
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "publishable_key": {
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "secret_key": {
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "status": {
+      "operations": {
+        "update": {
+          "validate": [
+            { "type": "required" },
+            { "type": "within", "value": ["disabled"] }
+          ]
+        }
+      }
+    }
+  }
+}

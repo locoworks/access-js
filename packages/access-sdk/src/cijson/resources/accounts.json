@@ -1,0 +1,50 @@
+{
+  "name": "accounts",
+  "primary": ["id"],
+  "softDelete": true,
+  "persistence": {
+    "table": "access_accounts"
+  },
+  "mixins": ["timestamps"],
+  "attributes": {
+    "id": {
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "scru_pid",
+              "prefix": "acct"
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        }
+      }
+    },
+    "creator_user_id": {
+      "label": "creator_user_id",
+      "operations": {}
+    },
+    "tenant_id": {
+      "label": "Tenant",
+      "operations": {}
+    },
+    "name": {
+      "label": "type",
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
+    }
+  },
+  "relations": {
+    "keys": {
+      "relation": {
+        "localKey": "id",
+        "foreignKey": "account_id",
+        "type": "has_many",
+        "resource": "keys"
+      }
+    }
+  }
+}

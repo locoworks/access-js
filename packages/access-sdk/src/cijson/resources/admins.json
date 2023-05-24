@@ -1,0 +1,85 @@
+{
+  "name": "admins",
+  "primary": ["id"],
+  "softDelete": true,
+  "persistence": {
+    "table": "access_admins"
+  },
+  "mixins": ["timestamps"],
+  "attributes": {
+    "id": {
+      "label": "ID",
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "scru_pid",
+              "prefix": "admin"
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        },
+        "update": {
+          "validate": [
+            { "type": "required" },
+            {
+              "type": "exists",
+              "table": "access_users",
+              "column": "id"
+            }
+          ]
+        }
+      }
+    },
+    "tenant_id": {
+      "label": "Tenant",
+      "operations": {}
+    },
+    "email": {
+      "operations": {
+        "create": {
+          "validate": [
+            { "type": "required" },
+            {
+              "type": "unique",
+              "table": "access_admins",
+              "column": "email",
+              "includeAttributes": ["tenant_id"],
+              "excludeAttributes": []
+            }
+          ]
+        }
+      }
+    },
+    "password": {
+      "label": "Password",
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "password"
+            }
+          ],
+          "validate": [{ "type": "required" }]
+        }
+      }
+    },
+    "meta": {
+      "operations": {}
+    }
+  },
+  "relations": {
+    "tokens": {
+      "label": "Tokens",
+      "relation": {
+        "localKey": "id",
+        "foreignKey": "sub",
+        "type": "has_many",
+        "resource": "tokens",
+        "filter": {
+          "issuer": "user"
+        }
+      }
+    }
+  }
+}

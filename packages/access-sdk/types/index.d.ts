@@ -1,0 +1,12 @@
+import AccessSDK from "./sdk";
+declare const UserCanRegister: (args: any) => Promise<any>;
+declare const UserCanVerifyRegistration: (args: any) => Promise<any>;
+declare const UserCanLogin: (args: any) => Promise<any>;
+declare const UserCanRequestResetPassword: (args: any) => Promise<any>;
+declare const UserCanResetPassword: (args: any) => Promise<any>;
+declare const UserCanAuthorize: (args: any) => Promise<any>;
+declare const AccountsCrud: (args: any) => Promise<any>;
+declare const KeysCrud: (args: any) => Promise<any>;
+declare const KeysRecognize: (args: any) => Promise<any>;
+declare const AdminsCrud: (args: any) => Promise<any>;
+export { UserCanRegister, UserCanVerifyRegistration, UserCanLogin, UserCanRequestResetPassword, UserCanResetPassword, UserCanAuthorize, AccountsCrud, KeysCrud, AdminsCrud, KeysRecognize, AccessSDK, };

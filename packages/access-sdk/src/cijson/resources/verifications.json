@@ -1,0 +1,64 @@
+{
+  "name": "verifications",
+  "primary": ["id"],
+  "softDelete": false,
+  "persistence": {
+    "table": "access_verifications"
+  },
+  "mixins": ["timestamps"],
+  "attributes": {
+    "id": {
+      "operations": {
+        "create": {
+          "generate": [
+            {
+              "type": "scru_pid",
+              "prefix": "verif"
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        }
+      }
+    },
+    "user_id": {},
+    "tenant_id": {},
+    "token": {
+      "operations": {
+        "create,update,patch": {
+          "generate": [
+            {
+              "type": "rand_number",
+              "length": 6
+            }
+          ],
+          "validate": [{ "type": "notempty" }]
+        }
+      }
+    },
+    "attribute_type": {
+      "operations": {
+        "create,update,patch": {
+          "validate": [
+            { "type": "required" },
+            { "type": "within", "value": ["email", "mobile"] }
+          ]
+        }
+      }
+    },
+    "attribute_value": {},
+    "purpose": {},
+    "expires_at": {
+      "operations": {
+        "create,update,patch": {
+          "generate": [
+            {
+              "type": "future_datetime",
+              "minutes": 100
+            }
+          ],
+          "validate": [{ "type": "notempty" }, { "type": "date_iso" }]
+        }
+      }
+    }
+  }
+}
