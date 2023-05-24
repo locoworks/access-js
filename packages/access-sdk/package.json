@@ -8,6 +8,7 @@
   "files": [
     "/lib",
     "/types",
+    "/database",
     "changelog.md"
   ],
   "author": {
