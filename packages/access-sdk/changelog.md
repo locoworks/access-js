@@ -1,5 +1,7 @@
-# changelog
+# @locoworks/access-sdk
 
-## 1.0.0
+## 0.0.1
 
-- Initial release.
+### Patch Changes
+
+- c12a7e8: First version
