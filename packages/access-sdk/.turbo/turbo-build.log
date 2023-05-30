@@ -1,14 +1,14 @@
 $ npm run clean && npm run build:types && npm run build:js
 
-> @locoworks/access-sdk@1.0.0 clean
+> @locoworks/access-sdk@0.0.3 clean
 > rm -rf lib && rm -rf types
 
 
-> @locoworks/access-sdk@1.0.0 build:types
+> @locoworks/access-sdk@0.0.3 build:types
 > tsc --emitDeclarationOnly
 
 
-> @locoworks/access-sdk@1.0.0 build:js
+> @locoworks/access-sdk@0.0.3 build:js
 > rollup -c
 
 [36m
@@ -51,15 +51,11 @@ $ npm run clean && npm run build:types && npm run build:js
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanLogin/index.ts
-   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
-   7:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  21:3   error    Unnecessary try/catch wrapper             no-useless-catch
-  25:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  46:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  89:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/Authorize/index.ts
+  1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
+  6:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
 
-✖ 6 problems (2 errors, 4 warnings)
+✖ 2 problems (1 error, 1 warning)
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
@@ -77,11 +73,28 @@ $ npm run clean && npm run build:types && npm run build:js
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/Authorize/index.ts
-  1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
-  6:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanLogin/index.ts
+   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
+   7:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:3   error    Unnecessary try/catch wrapper             no-useless-catch
+  25:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  46:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  89:17  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
 
-✖ 2 problems (1 error, 1 warning)
+✖ 6 problems (2 errors, 4 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Accounts/CRUD/index.ts
+   1:1   error    Run autofix to sort these imports!             simple-import-sort/imports
+   2:30  error    'generateRandomKey' is defined but never used  @typescript-eslint/no-unused-vars
+   5:36  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  25:7   error    Unexpected lexical declaration in case block   no-case-declarations
+  25:26  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  40:7   error    Unexpected lexical declaration in case block   no-case-declarations
+  40:29  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+
+✖ 7 problems (4 errors, 3 warnings)
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
@@ -95,14 +108,35 @@ $ npm run clean && npm run build:types && npm run build:js
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Accounts/CRUD/index.ts
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanResetPassword/index.ts
+   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
+  10:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  47:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 4 problems (1 error, 3 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanRequestResetPassword/index.ts
+   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
+   5:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  22:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  77:34  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 5 problems (1 error, 4 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Admins/CRUD/index.ts
    1:1   error    Run autofix to sort these imports!             simple-import-sort/imports
    2:30  error    'generateRandomKey' is defined but never used  @typescript-eslint/no-unused-vars
-   5:36  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
-  25:7   error    Unexpected lexical declaration in case block   no-case-declarations
-  25:26  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
-  40:7   error    Unexpected lexical declaration in case block   no-case-declarations
-  40:29  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+   8:36  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  29:7   error    Unexpected lexical declaration in case block   no-case-declarations
+  29:29  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
+  42:7   error    Unexpected lexical declaration in case block   no-case-declarations
+  42:28  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
 
 ✖ 7 problems (4 errors, 3 warnings)
   1 error and 0 warnings potentially fixable with the `--fix` option.
@@ -127,27 +161,6 @@ $ npm run clean && npm run build:types && npm run build:js
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanRequestResetPassword/index.ts
-   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
-   5:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  22:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  45:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  77:34  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-
-✖ 5 problems (1 error, 4 warnings)
-  1 error and 0 warnings potentially fixable with the `--fix` option.
-
-
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Users/CanResetPassword/index.ts
-   1:1   error    Run autofix to sort these imports!        simple-import-sort/imports
-  10:36  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  27:30  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-  47:33  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
-
-✖ 4 problems (1 error, 3 warnings)
-  1 error and 0 warnings potentially fixable with the `--fix` option.
-
-
 /Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Keys/Recognize/index.ts
    1:1   error    Run autofix to sort these imports!             simple-import-sort/imports
    2:30  error    'generateRandomKey' is defined but never used  @typescript-eslint/no-unused-vars
@@ -159,44 +172,7 @@ $ npm run clean && npm run build:types && npm run build:js
   1 error and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/stories/Admins/CRUD/index.ts
-   1:1   error    Run autofix to sort these imports!             simple-import-sort/imports
-   2:30  error    'generateRandomKey' is defined but never used  @typescript-eslint/no-unused-vars
-   8:36  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
-  29:7   error    Unexpected lexical declaration in case block   no-case-declarations
-  29:29  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
-  42:7   error    Unexpected lexical declaration in case block   no-case-declarations
-  42:28  warning  Unexpected any. Specify a different type       @typescript-eslint/no-explicit-any
-
-✖ 7 problems (4 errors, 3 warnings)
-  1 error and 0 warnings potentially fixable with the `--fix` option.
-
-
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/tokens.json
-  1:0  error  Parsing error: '{' expected
-
-✖ 1 problem (1 error, 0 warnings)
-
-
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/accounts.json
-  1:0  error  Parsing error: '{' expected
-
-✖ 1 problem (1 error, 0 warnings)
-
-
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/users.json
-  1:0  error  Parsing error: '{' expected
-
-✖ 1 problem (1 error, 0 warnings)
-
-
 /Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/attributes.json
-  1:0  error  Parsing error: '{' expected
-
-✖ 1 problem (1 error, 0 warnings)
-
-
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/admins.json
   1:0  error  Parsing error: '{' expected
 
 ✖ 1 problem (1 error, 0 warnings)
@@ -208,7 +184,31 @@ $ npm run clean && npm run build:types && npm run build:js
 ✖ 1 problem (1 error, 0 warnings)
 
 
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/accounts.json
+  1:0  error  Parsing error: '{' expected
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/tokens.json
+  1:0  error  Parsing error: '{' expected
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/admins.json
+  1:0  error  Parsing error: '{' expected
+
+✖ 1 problem (1 error, 0 warnings)
+
+
 /Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/keys.json
+  1:0  error  Parsing error: '{' expected
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/cijson/resources/users.json
   1:0  error  Parsing error: '{' expected
 
 ✖ 1 problem (1 error, 0 warnings)
@@ -228,6 +228,18 @@ $ npm run clean && npm run build:types && npm run build:js
   2 errors and 0 warnings potentially fixable with the `--fix` option.
 
 
+/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/functions/validateToken.ts
+   4:8   warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+   8:7   error    'decoded' is never reassigned. Use 'const' instead  prefer-const
+  10:7   error    'token' is never reassigned. Use 'const' instead    prefer-const
+  10:14  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  27:17  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+  54:18  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
+
+✖ 6 problems (2 errors, 4 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+
+
 /Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/utils/createToken.ts
    4:41  warning  Unexpected any. Specify a different type          @typescript-eslint/no-explicit-any
    5:3   error    Unnecessary try/catch wrapper                     no-useless-catch
@@ -244,21 +256,9 @@ $ npm run clean && npm run build:types && npm run build:js
   4 errors and 0 warnings potentially fixable with the `--fix` option.
 
 
-/Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/functions/validateToken.ts
-   4:8   warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
-   8:7   error    'decoded' is never reassigned. Use 'const' instead  prefer-const
-  10:7   error    'token' is never reassigned. Use 'const' instead    prefer-const
-  10:14  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
-  27:17  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
-  54:18  warning  Unexpected any. Specify a different type            @typescript-eslint/no-explicit-any
-
-✖ 6 problems (2 errors, 4 warnings)
-  2 errors and 0 warnings potentially fixable with the `--fix` option.
-
-
 /Users/rajiv/Projects/LoCoWorks/access-js/packages/access-sdk/src/utils/tokenHelpers.ts
   5:3  error  Unnecessary try/catch wrapper  no-useless-catch
 
 ✖ 1 problem (1 error, 0 warnings)
 
-[32mcreated [1m./lib/access-sdk.esm.js, ./lib/access-sdk.js[22m in [1m2.1s[22m[39m
+[32mcreated [1m./lib/access-sdk.esm.js, ./lib/access-sdk.js[22m in [1m2.2s[22m[39m
