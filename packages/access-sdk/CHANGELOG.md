@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.3
+
+### Patch Changes
+
+- cdc7f02: knex added
+
 ## 0.0.2
 
 ### Patch Changes
