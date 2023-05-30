@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.4
+
+### Patch Changes
+
+- a66a13d: Use js for migrations
+
 ## 0.0.3
 
 ### Patch Changes
