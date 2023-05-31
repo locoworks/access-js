@@ -40,6 +40,18 @@ jobs:
         if: steps.changesets.outputs.published == 'true'
         run: echo ${{ steps.changesets.outputs.publishedPackages }}
 
+      - name: Get published package version
+        if: steps.changesets.outputs.published == 'true'
+        id: version
+        run: |
+          VERSION=$(echo $changeset_outputs_published_packages | jq '.[0].version')
+          echo "::set-output name=version::$VERSION"
+        env:
+          changeset_outputs_published_packages: ${{ steps.changesets.outputs.publishedPackages }}
+      - name: Test
+        if: steps.changesets.outputs.published == 'true'
+        run: echo ${{ steps.version.outputs.version }}
+
       - name: Discord notification
         if: steps.changesets.outputs.published == 'true'
         env:
