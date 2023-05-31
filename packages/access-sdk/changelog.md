@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.5
+
+### Patch Changes
+
+- 9254320: Convert migrations to require
+
 ## 0.0.4
 
 ### Patch Changes
