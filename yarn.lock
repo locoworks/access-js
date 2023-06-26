@@ -1462,28 +1462,24 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@locoworks/cijson-engine@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.3.tgz#118fd34a58f5eaad01504bf94688daf1a1701ada"
-  integrity sha512-OKk+VDdg2QSWF/SvmPyVgiy9Z9D86161nRHoaxalUqpUzdcYyF3QF+g2qS6CGu2gZxLQFox9UwPXkJODwz5nJw==
+"@locoworks/cijson-engine@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.9.tgz#f377d4eaf18066b0269ae1d0850f516b703bdab9"
+  integrity sha512-eELmzQsS7flXQLrOTzmr05VFHV6HXF+qEITsd4vkV/1DI1a02vgwqbEampH56HEt6//u0OBZXtbG6xUtN14Ehg==
   dependencies:
-    "@locoworks/cijson-utils" "^0.0.3"
-    scru128 "^2.4.1"
+    "@types/lodash.merge" "^4.6.7"
+    lodash.merge "^4.6.2"
+    scru128 "^2.4.0"
     validate.js "^0.13.1"
 
-"@locoworks/cijson-utils@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@locoworks/cijson-utils/-/cijson-utils-0.0.1.tgz"
-  integrity sha512-fmMtpraurc/M/frN+IYiBXEdsjPsVrRlt0uXwWoLWJxXdsRjOJf4E9fyNBJh5bz8c4+DhNMvAlpbdxScaYgbAw==
+"@locoworks/cijson-utils@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@locoworks/cijson-utils/-/cijson-utils-0.0.8.tgz#832fe33a8c5a0dfeaa08d5e58aaa6049f8b97741"
+  integrity sha512-/swlhKT1baz7ZNGY9JL2kNen5uMMfhEZXPytkA8pqZ7V/yqbXTOYg4nUSTp2X7KS2yPEJuJvSY/N2s7eZYw1FA==
   dependencies:
-    fast-text-encoding "^1.0.6"
-    validate.js "^0.13.1"
-
-"@locoworks/cijson-utils@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@locoworks/cijson-utils/-/cijson-utils-0.0.3.tgz#46ad2b7af871d020fd65157b2e214c698d3f7fa8"
-  integrity sha512-zeRsTqwH3FZJz7okmxyKbwVqvVjVl7oVRiVpMJCWUM5Fw3oFcG8WZM/8+F9j0FIQOVn6OwLreKFFKyOisav7kQ==
-  dependencies:
+    "@rollup/plugin-json" "^6.0.0"
+    "@types/bcryptjs" "^2.4.2"
+    bcryptjs "^2.4.3"
     fast-text-encoding "^1.0.6"
     validate.js "^0.13.1"
 
@@ -1652,6 +1648,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bcryptjs@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@types/bcryptjs/-/bcryptjs-2.4.2.tgz#e3530eac9dd136bfdfb0e43df2c4c5ce1f77dfae"
+  integrity sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
+
 "@types/estree@*":
   version "1.0.0"
   resolved "https://registry.npmjs.org/@types/estree/-/estree-1.0.0.tgz"
@@ -1717,6 +1718,18 @@
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
+
+"@types/lodash.merge@^4.6.7":
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/@types/lodash.merge/-/lodash.merge-4.6.7.tgz#0af6555dd8bc6568ef73e5e0d820a027362946b1"
+  integrity sha512-OwxUJ9E50gw3LnAefSHJPHaBLGEKmQBQ7CZe/xflHkyy/wH2zVyEIAKReHvVrrn7zKdF58p16We9kMfh7v0RRQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.195"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.195.tgz#bafc975b252eb6cea78882ce8a7b6bf22a6de632"
+  integrity sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==
 
 "@types/minimist@^1.2.0":
   version "1.2.2"
@@ -2114,6 +2127,11 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
+bcryptjs@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
+  integrity sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==
 
 better-path-resolve@1.0.0:
   version "1.0.0"
@@ -5187,6 +5205,11 @@ safe-regex-test@^1.0.0:
   version "2.1.2"
   resolved "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+scru128@^2.4.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/scru128/-/scru128-2.5.0.tgz#ccea930f606e2e56ff70c8770ac2223a4e43f66d"
+  integrity sha512-i92LHJyZAI2mvvef8btg+6Lx9A00x0AhrKAF0r0LONKHULsnfEoavqIBEZ4EjI+irCNQcvCzd7Nu8frRDuQtOw==
 
 scru128@^2.4.1:
   version "2.4.1"
