@@ -104,7 +104,8 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
 
     const validPassword = await validatePassword(
       prepareResult.password,
-      user.password
+      user.password,
+      cie.config.bcryptSalt
     );
 
     if (validPassword) {

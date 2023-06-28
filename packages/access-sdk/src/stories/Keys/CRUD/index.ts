@@ -39,8 +39,8 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       break;
 
     case "create":
-      const secretKey = await generateRandomKey();
-      const publishableKey = await generateRandomKey();
+      const secretKey = await generateRandomKey(16, cie.config.bcryptSalt);
+      const publishableKey = await generateRandomKey(16, cie.config.bcryptSalt);
 
       const createdKey: any = await cie.create("keys", {
         payload: {
