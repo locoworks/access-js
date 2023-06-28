@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.7
+
+### Patch Changes
+
+- 9626e69: dd method for salt
+
 ## 0.0.6
 
 ### Patch Changes
