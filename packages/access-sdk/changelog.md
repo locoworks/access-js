@@ -1,5 +1,12 @@
 # @locoworks/access-sdk
 
+## 0.0.6
+
+### Patch Changes
+
+- 424d0b5: Upgrade utils/engine
+- a49009a: Move to devDependencies
+
 ## 0.0.5
 
 ### Patch Changes
