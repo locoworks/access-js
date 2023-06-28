@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.8
+
+### Patch Changes
+
+- ae84151: Fix type errors
+
 ## 0.0.7
 
 ### Patch Changes
