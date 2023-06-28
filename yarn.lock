@@ -1462,20 +1462,20 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@locoworks/cijson-engine@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.9.tgz#f377d4eaf18066b0269ae1d0850f516b703bdab9"
-  integrity sha512-eELmzQsS7flXQLrOTzmr05VFHV6HXF+qEITsd4vkV/1DI1a02vgwqbEampH56HEt6//u0OBZXtbG6xUtN14Ehg==
+"@locoworks/cijson-engine@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.10.tgz#bb0dbc2d3f1310652f87288f91f3fde6616e9522"
+  integrity sha512-AedgDc8i0x1Zqntm4sYL1aas23Df6UJ7XeGxd9FzTwkm19M+DWq4WqVRYK228agv3Yp4J8UXki1Y5nun/CjOmw==
   dependencies:
     "@types/lodash.merge" "^4.6.7"
     lodash.merge "^4.6.2"
     scru128 "^2.4.0"
     validate.js "^0.13.1"
 
-"@locoworks/cijson-utils@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@locoworks/cijson-utils/-/cijson-utils-0.0.8.tgz#832fe33a8c5a0dfeaa08d5e58aaa6049f8b97741"
-  integrity sha512-/swlhKT1baz7ZNGY9JL2kNen5uMMfhEZXPytkA8pqZ7V/yqbXTOYg4nUSTp2X7KS2yPEJuJvSY/N2s7eZYw1FA==
+"@locoworks/cijson-utils@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@locoworks/cijson-utils/-/cijson-utils-0.0.9.tgz#e3d2c0320adf0a0a58224c7f41edbb2307e40244"
+  integrity sha512-SFLzdVYA73+PVpLwjgYoT9AQPCOqTc344EM7O8al4qxyiYcTQdAFuby0yYwnLGdhJsnMRrRcUEfUWcYNK3oqeA==
   dependencies:
     "@rollup/plugin-json" "^6.0.0"
     "@types/bcryptjs" "^2.4.2"

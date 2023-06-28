@@ -20,10 +20,16 @@ class AccessSDK {
     // Private constructor to prevent instantiation outside of this class
   }
 
-  public static getInstance(operator: any): AccessSDK {
+  public static getInstance(
+    operator: any,
+    salt: string | undefined
+  ): AccessSDK {
     if (!AccessSDK.instance) {
       AccessSDK.instance = new AccessSDK();
       const ciConfig = new CIConfig();
+      if (salt !== undefined) {
+        ciConfig.setBCryptSalt(salt);
+      }
       ciConfig.registerMixin("timestamps", timestamps);
       ciConfig.registerResource(users);
       ciConfig.registerResource(attributes);
