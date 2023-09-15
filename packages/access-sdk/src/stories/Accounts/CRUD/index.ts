@@ -9,6 +9,7 @@ const prepare = (executionContext: any) => {
     "tenant_id",
     "user_id",
     "account_id",
+    "type"
   ]);
 };
 
@@ -40,6 +41,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       const createdAccount: any = await cie.create("accounts", {
         payload: {
           name: prepareResult.name,
+          type: prepareResult.type,
           tenant_id: prepareResult.tenant_id,
           creator_user_id: prepareResult.user_id,
         },

@@ -35,6 +35,14 @@
           "validate": [{ "type": "required" }]
         }
       }
+    },
+    "type": {
+      "label": "type",
+      "operations": {
+        "create": {
+          "validate": [{ "type": "required" }]
+        }
+      }
     }
   },
   "relations": {
