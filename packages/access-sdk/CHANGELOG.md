@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.9
+
+### Patch Changes
+
+- 5cbc310: updated accounts api
+
 ## 0.0.8
 
 ### Patch Changes
