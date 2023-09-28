@@ -69,7 +69,6 @@
     "@locoworks/cijson-engine": "^0.0.10",
     "@locoworks/cijson-utils": "^0.0.9",
     "jose": "^4.13.1",
-    "knex": "^2.4.2",
     "scru128": "^2.4.1",
     "validate.js": "^0.13.1"
   }

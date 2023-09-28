@@ -14,7 +14,8 @@
     "test": "turbo run test",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "npm run build && changeset publish"
+    "release": "npm run build && changeset publish",
+    "full_clean": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules && npm exec --workspaces -- npx rimraf .turbo && npx rimraf .turbo"
   },
   "workspaces": [
     "apps/*",
