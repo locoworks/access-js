@@ -40,6 +40,8 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.19.0",
     "@babel/preset-typescript": "^7.18.6",
+    "@locoworks/cijson-engine": "^0.0.14",
+    "@locoworks/cijson-utils": "^0.0.9",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-json": "^6.0.0",
@@ -56,20 +58,24 @@
     "eslint-plugin-promise": "^6.0.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "jest": "^28.1.3",
+    "jose": "^4.13.1",
     "license-checker": "^25.0.1",
     "nodemon": "^2.0.22",
     "prettier": "^2.7.1",
     "rollup": "^2.79.0",
     "rollup-plugin-eslint": "^7.0.0",
+    "scru128": "^2.4.1",
     "ts-jest": "^28.0.8",
     "typedoc": "^0.23.14",
     "typescript": "^4.8.3"
   },
-  "dependencies": {
-    "@locoworks/cijson-engine": "^0.0.13",
+  "peerDependencies": {
+    "@locoworks/cijson-engine": "^0.0.14",
     "@locoworks/cijson-utils": "^0.0.9",
     "jose": "^4.13.1",
-    "scru128": "^2.4.1",
+    "scru128": "^2.4.1"
+  },
+  "dependencies": {
     "validate.js": "^0.13.1"
   }
 }

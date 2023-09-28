@@ -33,5 +33,5 @@ export default {
     },
   ],
   plugins,
-  external: ["jose"],
+  external: ["jose", "@locoworks/cijson-engine", "@locoworks/cijson-utils"],
 };
