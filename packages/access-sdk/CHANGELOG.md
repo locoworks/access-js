@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.12
+
+### Patch Changes
+
+- ea03e4c: Remove engine accidentally
+
 ## 0.0.11
 
 ### Patch Changes
