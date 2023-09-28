@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.13
+
+### Patch Changes
+
+- 3c5f839: Update cijson engine
+
 ## 0.0.12
 
 ### Patch Changes
