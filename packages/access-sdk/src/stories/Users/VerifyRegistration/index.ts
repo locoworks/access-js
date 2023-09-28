@@ -3,8 +3,12 @@ import { pickKeysFromObject } from "@locoworks/cijson-utils";
 import AccessSDK from "../../../sdk";
 
 const isDateInPast = (jsDateTimeString: string, jsDateObject = new Date()) => {
-  console.log("isDateInPast", new Date(jsDateTimeString), jsDateObject);
-  return new Date(jsDateTimeString) < jsDateObject;
+  console.log(
+    "isDateInPast",
+    new Date(Date.parse(jsDateTimeString + "Z")),
+    jsDateObject
+  );
+  return new Date(Date.parse(jsDateTimeString + "Z")) < jsDateObject;
 };
 
 const prepare = (executionContext: any) => {
