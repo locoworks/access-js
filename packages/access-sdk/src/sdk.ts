@@ -48,6 +48,7 @@ class AccessSDK {
       ciConfig.registerOperator(operator);
       const ciEngine = new CIEngine(ciConfig);
       AccessSDK.accessConfig = accessConfig;
+      AccessSDK.engine = ciEngine;
     }
     return AccessSDK.instance;
   }

@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.11
+
+### Patch Changes
+
+- f8bd2bc: Remove process.env dependency
+
 ## 0.0.10
 
 ### Patch Changes
