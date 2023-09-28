@@ -1,10 +1,11 @@
 import * as jose from "jose";
-const jwtExpiry = process.env.JWT_EXPIRY_TIME || "1y";
+import AccessSDK from "../sdk";
 
 const decodeJWT = async (jwt: string) => {
+  const accessConfig = AccessSDK.getConfig();
   try {
-    if (process.env.ACCESS_PUBLIC_KEY !== undefined) {
-      const publicKeyEnv = process.env.ACCESS_PUBLIC_KEY.replace(/\\n/g, "\n");
+    if (accessConfig.publicKey !== undefined) {
+      const publicKeyEnv = accessConfig.publicKey.replace(/\\n/g, "\n");
       const ecPublicKey = await jose.importSPKI(publicKeyEnv, "ed25519");
       const { payload } = await jose.jwtVerify(jwt, ecPublicKey);
       return payload;
@@ -22,16 +23,17 @@ const generateJWT = async (
   jti: string,
   sub: string,
   issuer: string,
-  payload = {},
-  expiry = jwtExpiry
+  payload = {}
 ) => {
-  if (process.env.ACCESS_PRIVATE_KEY !== undefined) {
-    const privateKeyEnv = process.env.ACCESS_PRIVATE_KEY.replace(/\\n/g, "\n");
+  const accessConfig = AccessSDK.getConfig();
+
+  if (accessConfig.privateKey !== undefined) {
+    const privateKeyEnv = accessConfig.privateKey.replace(/\\n/g, "\n");
     const ecPrivateKey = await jose.importPKCS8(privateKeyEnv, "ed25519");
 
     const jwt = await new jose.SignJWT(payload)
       .setProtectedHeader({ alg: "EdDSA" })
-      .setExpirationTime(expiry)
+      .setExpirationTime(accessConfig.jwtExpiry || "1y")
       .setSubject(sub)
       .setAudience("access")
       .setIssuer(issuer)

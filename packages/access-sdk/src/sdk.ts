@@ -15,6 +15,7 @@ import timestamps from "./cijson/mixins/timestamps.json";
 class AccessSDK {
   private static instance: AccessSDK;
   private static engine: any;
+  private static accessConfig: any;
 
   private constructor() {
     // Private constructor to prevent instantiation outside of this class
@@ -22,13 +23,18 @@ class AccessSDK {
 
   public static getInstance(
     operator: any,
-    salt: string | undefined
+    accessConfig: {
+      salt: string | undefined;
+      publicKey: string | undefined;
+      privateKey: string | undefined;
+      jwtExpiry: string | undefined;
+    }
   ): AccessSDK {
     if (!AccessSDK.instance) {
       AccessSDK.instance = new AccessSDK();
       const ciConfig = new CIConfig();
-      if (salt !== undefined) {
-        ciConfig.setBCryptSalt(salt);
+      if (accessConfig.salt !== undefined) {
+        ciConfig.setBCryptSalt(accessConfig.salt);
       }
       ciConfig.registerMixin("timestamps", timestamps);
       ciConfig.registerResource(users);
@@ -41,9 +47,13 @@ class AccessSDK {
       ciConfig.registerHook("afterPrepareReadUsers", afterPrepareReadUsers);
       ciConfig.registerOperator(operator);
       const ciEngine = new CIEngine(ciConfig);
-      AccessSDK.engine = ciEngine;
+      AccessSDK.accessConfig = accessConfig;
     }
     return AccessSDK.instance;
+  }
+
+  public static getConfig(): any {
+    return AccessSDK.accessConfig;
   }
 
   public static getEngine(): any {
