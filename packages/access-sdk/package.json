@@ -1,6 +1,6 @@
 {
   "name": "@locoworks/access-sdk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Code in JSON",
   "main": "lib/access-sdk.js",
   "module": "lib/access-sdk.esm.js",
