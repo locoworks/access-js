@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.10
+
+### Patch Changes
+
+- 03983a9: Move jose to external dependencies
+
 ## 0.0.9
 
 ### Patch Changes
