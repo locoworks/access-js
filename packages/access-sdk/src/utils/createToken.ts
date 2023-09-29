@@ -8,7 +8,7 @@ const createTokenForUser = async (user: any) => {
       payload: {
         sub: user.id,
         issuer: "user",
-        other_info: {},
+        other_info: JSON.stringify({}),
         tenant_id: user.tenant_id,
       },
       transformations: ["pick_first"],

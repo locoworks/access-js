@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.16
+
+### Patch Changes
+
+- ac2b6c9: Introduce variables to customize alg of jose
+
 ## 0.0.15
 
 ### Patch Changes
