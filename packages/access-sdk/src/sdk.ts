@@ -28,6 +28,8 @@ class AccessSDK {
       publicKey: string | undefined;
       privateKey: string | undefined;
       jwtExpiry: string | undefined;
+      importAlg: string | undefined;
+      encDecAlg: string | undefined;
     }
   ): AccessSDK {
     if (!AccessSDK.instance) {

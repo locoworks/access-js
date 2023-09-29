@@ -6,7 +6,10 @@ const decodeJWT = async (jwt: string) => {
   try {
     if (accessConfig.publicKey !== undefined) {
       const publicKeyEnv = accessConfig.publicKey.replace(/\\n/g, "\n");
-      const ecPublicKey = await jose.importSPKI(publicKeyEnv, "ed25519");
+      const ecPublicKey = await jose.importSPKI(
+        publicKeyEnv,
+        accessConfig.importAlg || "ed25519"
+      );
       const { payload } = await jose.jwtVerify(jwt, ecPublicKey);
       return payload;
     } else {
@@ -29,10 +32,13 @@ const generateJWT = async (
 
   if (accessConfig.privateKey !== undefined) {
     const privateKeyEnv = accessConfig.privateKey.replace(/\\n/g, "\n");
-    const ecPrivateKey = await jose.importPKCS8(privateKeyEnv, "ed25519");
+    const ecPrivateKey = await jose.importPKCS8(
+      privateKeyEnv,
+      accessConfig.importAlg || "ed25519"
+    );
 
     const jwt = await new jose.SignJWT(payload)
-      .setProtectedHeader({ alg: "EdDSA" })
+      .setProtectedHeader({ alg: accessConfig.encDecAlg || "EdDSA" })
       .setExpirationTime(accessConfig.jwtExpiry || "1y")
       .setSubject(sub)
       .setAudience("access")
