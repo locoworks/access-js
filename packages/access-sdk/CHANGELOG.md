@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.15
+
+### Patch Changes
+
+- c8dc5f9: Append "Z"
+
 ## 0.0.14
 
 ### Patch Changes
