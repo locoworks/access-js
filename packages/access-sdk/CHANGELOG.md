@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.17
+
+### Patch Changes
+
+- 850fb59: Json stringify other_info
+
 ## 0.0.16
 
 ### Patch Changes
