@@ -13,6 +13,12 @@ const authorize = () => {
 
 const handle = async ({ prepareResult }: StoryExecutionContext) => {
   const cie = AccessSDK.getEngine();
+  if (prepareResult.token === undefined) {
+    throw {
+      statusCode: 401,
+      message: "unauthorized",
+    };
+  }
   return await validateToken(cie, prepareResult.token, prepareResult.tenant_id);
 };
 
