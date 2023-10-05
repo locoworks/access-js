@@ -29,7 +29,7 @@
       "operations": {}
     },
     "name": {
-      "label": "type",
+      "label": "Name",
       "operations": {
         "create": {
           "validate": [{ "type": "required" }]
@@ -37,12 +37,16 @@
       }
     },
     "type": {
-      "label": "type",
+      "label": "Type",
       "operations": {
         "create": {
           "validate": [{ "type": "required" }]
         }
       }
+    },
+    "meta": {
+      "label": "Meta",
+      "operations": {}
     }
   },
   "relations": {
