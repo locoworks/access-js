@@ -9,6 +9,7 @@ const prepare = (executionContext: any) => {
     "tenant_id",
     "user_id",
     "account_id",
+    "meta",
     "type"
   ]);
 };
@@ -44,6 +45,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
           type: prepareResult.type,
           tenant_id: prepareResult.tenant_id,
           creator_user_id: prepareResult.user_id,
+          meta: prepareResult.meta,
         },
         transformations: ["pick_first"],
       });
