@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.20
+
+### Patch Changes
+
+- 8f867c7: Include tenant_id during verify registration
+
 ## 0.0.19
 
 ### Patch Changes
