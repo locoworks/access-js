@@ -3,12 +3,15 @@ import { pickKeysFromObject } from "@locoworks/cijson-utils";
 import AccessSDK from "../../../sdk";
 
 const prepare = (executionContext: any) => {
-  return pickKeysFromObject(executionContext, [
+  let prepareResult = pickKeysFromObject(executionContext, [
     "attribute_type",
     "attribute_value",
     "tenant_id",
     "password",
+    "meta",
   ]);
+
+  return prepareResult;
 };
 
 const authorize = () => {
@@ -41,8 +44,6 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       ],
       transformations: ["pick_first"],
     });
-
-    console.log("existingAttribute", existingAttribute);
 
     if (existingAttribute !== null) {
       return {
@@ -77,10 +78,10 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
         payload: {
           password: prepareResult.password,
           tenant_id: prepareResult.tenant_id,
+          meta: prepareResult.meta,
         },
         transformations: ["pick_first"],
       });
-      console.log("createdUser", createdUser);
       const createdVerification: any = await cie.create("verifications", {
         payload: {
           user_id: createdUser.id,

@@ -23,7 +23,7 @@ const validateToken = async (
     transformations: ["pick_first"],
   });
 
-  if (token.issuer === "user" || token.iss === "user") {
+  if (token.issuer === "user") {
     const user: any = await cie.read("users", {
       filterBy: [
         {
@@ -50,7 +50,7 @@ const validateToken = async (
     return { token, decoded, user };
   }
 
-  if (token.issuer === "admin" || token.iss === "admin") {
+  if (token.issuer === "admin") {
     const admin: any = await cie.read("admins", {
       filterBy: [
         {
