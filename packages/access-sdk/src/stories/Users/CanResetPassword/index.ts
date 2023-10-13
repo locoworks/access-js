@@ -3,7 +3,6 @@ import AccessSDK from "../../../sdk";
 import type { StoryExecutionContext } from "@locoworks/cijson-utils";
 
 const isDateInPast = (jsDateTimeString: string, jsDateObject = new Date()) => {
-  console.log("isDateInPast", new Date(jsDateTimeString), jsDateObject);
   return new Date(jsDateTimeString) < jsDateObject;
 };
 

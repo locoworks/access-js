@@ -3,11 +3,6 @@ import { pickKeysFromObject } from "@locoworks/cijson-utils";
 import AccessSDK from "../../../sdk";
 
 const isDateInPast = (jsDateTimeString: string, jsDateObject = new Date()) => {
-  console.log(
-    "isDateInPast",
-    new Date(Date.parse(jsDateTimeString + "Z")),
-    jsDateObject
-  );
   return new Date(Date.parse(jsDateTimeString + "Z")) < jsDateObject;
 };
 
@@ -41,6 +36,11 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
           attribute: "attribute_value",
           op: "eq",
           value: prepareResult.attribute_value,
+        },
+        {
+          attribute: "tenant_id",
+          op: "eq",
+          value: prepareResult.tenant_id,
         },
       ],
       transformations: ["pick_first"],

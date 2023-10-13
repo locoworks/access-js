@@ -1,5 +1,17 @@
 # @locoworks/access-sdk
 
+## 0.0.19
+
+### Patch Changes
+
+- 3af7691: changes for accounts api
+
+## 0.0.18
+
+### Patch Changes
+
+- 4c06e87: Validate token in authorize
+
 ## 0.0.17
 
 ### Patch Changes
