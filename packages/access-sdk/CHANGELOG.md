@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.21
+
+### Patch Changes
+
+- 37109d4: Handle iss for CF Workers
+
 ## 0.0.20
 
 ### Patch Changes
