@@ -38,18 +38,25 @@
     "password": {
       "label": "Password",
       "operations": {
-        "create,patch": {
+        "create": {
           "generate": [
             {
               "type": "password"
             }
           ],
           "validate": [{ "type": "required" }]
+        },
+        "patch": {
+          "generate": [
+            {
+              "type": "password"
+            }
+          ]
         }
       }
     },
     "meta": {
-      "label": "Profile",
+      "label": "Meta",
       "operations": {},
       "ui": {
         "detail": {

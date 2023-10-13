@@ -1462,10 +1462,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@locoworks/cijson-engine@^0.0.14":
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.14.tgz#d3d05466bd29ba4a52c38986ff06d70295d5d351"
-  integrity sha512-e1eN1DEOOTMIZAlhi/jBuRzY67ou2IjX91TCy54w7B04gNqqDwdJFkF24qKyPCuxozEw1rBca9+nhiMKzOHl0w==
+"@locoworks/cijson-engine@^0.0.16":
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/@locoworks/cijson-engine/-/cijson-engine-0.0.16.tgz#400e7200e39c81af78756890f71352d1ad50dabe"
+  integrity sha512-5KjthCspTY6BC0NiOspkwx233ri/CDH2UBYOlzcRegxKzbU7VVi1V8cGRcBR6PymkDWT31qcjGpmCLfPl0oy+g==
   dependencies:
     "@types/lodash.merge" "^4.6.7"
     lodash.merge "^4.6.2"

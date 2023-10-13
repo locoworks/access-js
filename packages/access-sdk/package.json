@@ -40,7 +40,7 @@
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.19.0",
     "@babel/preset-typescript": "^7.18.6",
-    "@locoworks/cijson-engine": "^0.0.14",
+    "@locoworks/cijson-engine": "^0.0.15",
     "@locoworks/cijson-utils": "^0.0.9",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
@@ -70,12 +70,13 @@
     "typescript": "^4.8.3"
   },
   "peerDependencies": {
-    "@locoworks/cijson-engine": "^0.0.14",
+    "@locoworks/cijson-engine": "^0.0.15",
     "@locoworks/cijson-utils": "^0.0.9",
     "jose": "^4.13.1",
     "scru128": "^2.4.1"
   },
   "dependencies": {
+    "@locoworks/cijson-engine": "^0.0.16",
     "validate.js": "^0.13.1"
   }
 }
