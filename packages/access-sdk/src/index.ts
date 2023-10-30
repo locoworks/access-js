@@ -5,6 +5,7 @@ import UserCanCanLoginStory from "./stories/Users/CanLogin";
 import UserCanAuthorizeStory from "./stories/Users/Authorize";
 import UserCanRequestResetPasswordStory from "./stories/Users/CanRequestResetPassword";
 import UserCanResetPasswordStory from "./stories/Users/CanResetPassword";
+import UserCanSetPasswordStory from "./stories/Users/CanSetPassword";
 import UserCanFetchCurrentUserStory from "./stories/Users/CanFetchCurrentUser";
 import UserCanUpdateCurrentUserStory from "./stories/Users/CanUpdateCurrentUser";
 import AccountsCrudStory from "./stories/Accounts/CRUD";
@@ -44,6 +45,11 @@ const UserCanRequestResetPassword = async (args: any) => {
 
 const UserCanResetPassword = async (args: any) => {
   let result = await pahrStrategy(UserCanResetPasswordStory, args);
+  return result["respondResult"];
+};
+
+const UserCanSetPassword = async (args: any) => {
+  let result = await pahrStrategy(UserCanSetPasswordStory, args);
   return result["respondResult"];
 };
 
@@ -143,6 +149,7 @@ export {
   UserCanLogin,
   UserCanRequestResetPassword,
   UserCanResetPassword,
+  UserCanSetPassword,
   UserCanAuthorize,
   UserCanFetchCurrentUser,
   UserCanUpdateCurrentUser,

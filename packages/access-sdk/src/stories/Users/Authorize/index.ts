@@ -23,7 +23,21 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       message: "unauthorized",
     };
   }
-  return await validateToken(cie, prepareResult.token, prepareResult.tenant_id);
+  const token = await validateToken(
+    cie,
+    prepareResult.token,
+    prepareResult.tenant_id
+  );
+
+  if (token?.user.password_set) {
+    return token;
+  } else {
+    throw {
+      statusCode: 405,
+      token: token,
+      message: "setPassword",
+    };
+  }
 };
 
 const respond = ({ handleResult }: StoryExecutionContext) => {
