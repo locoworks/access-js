@@ -3,9 +3,7 @@ import AccessSDK from "../sdk";
 
 const decodeJWT = (jwt: string) => {
   try {
-    console.log("Is this called...", jwt);
     const claims = jose.decodeJwt(jwt);
-    console.log("claims....", claims);
     return claims;
   } catch (error) {
     throw error;
