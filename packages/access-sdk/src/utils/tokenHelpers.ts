@@ -1,7 +1,18 @@
 import * as jose from "jose";
 import AccessSDK from "../sdk";
 
-const decodeJWT = async (jwt: string) => {
+const decodeJWT = (jwt: string) => {
+  try {
+    console.log("Is this called...", jwt);
+    const claims = jose.decodeJwt(jwt);
+    console.log("claims....", claims);
+    return claims;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const validateJWT = async (jwt: string) => {
   const accessConfig = AccessSDK.getConfig();
   try {
     if (accessConfig.publicKey !== undefined) {
@@ -54,4 +65,4 @@ const generateJWT = async (
   }
 };
 
-export { generateJWT, decodeJWT };
+export { decodeJWT, generateJWT, validateJWT };

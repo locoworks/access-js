@@ -2,9 +2,13 @@ import type { StoryExecutionContext } from "@locoworks/cijson-utils";
 import { pickKeysFromObject } from "@locoworks/cijson-utils";
 import AccessSDK from "../../../sdk";
 import validateToken from "../../../functions/validateToken";
+import { decodeJWT } from "../../../utils/tokenHelpers";
 
 const prepare = (executionContext: any) => {
-  return pickKeysFromObject(executionContext, ["token", "tenant_id"]);
+  const payload = pickKeysFromObject(executionContext, ["token"]);
+  const decodedJwt = decodeJWT(payload.token);
+  payload.tenant_id = decodedJwt.tenant_id || "default";
+  return payload;
 };
 
 const authorize = () => {

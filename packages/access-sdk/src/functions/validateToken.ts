@@ -1,11 +1,11 @@
-import { decodeJWT } from "../utils/tokenHelpers";
+import { validateJWT } from "../utils/tokenHelpers";
 
 const validateToken = async (
   cie: any,
   bearerToken: string,
   tenant_id: string
 ) => {
-  let decoded = await decodeJWT(bearerToken);
+  let decoded = await validateJWT(bearerToken);
 
   let token: any = await cie.read("tokens", {
     filterBy: [
