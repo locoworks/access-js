@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.24
+
+### Patch Changes
+
+- 848b935: Remove logs
+
 ## 0.0.23
 
 ### Patch Changes
