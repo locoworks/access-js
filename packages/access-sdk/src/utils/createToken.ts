@@ -14,7 +14,9 @@ const createTokenForUser = async (user: any) => {
       transformations: ["pick_first"],
     });
 
-    let jwt = await generateJWT(token.id, token.sub, token.issuer);
+    let jwt = await generateJWT(token.id, token.sub, token.issuer, {
+      tenant_id: user.tenant_id,
+    });
     token["access_token"] = jwt;
     return { access_token: jwt };
   } catch (error) {
@@ -35,7 +37,9 @@ const createTokenForAdmin = async (admin: any) => {
       transformations: ["pick_first"],
     });
 
-    let jwt = await generateJWT(token.id, token.sub, token.issuer);
+    let jwt = await generateJWT(token.id, token.sub, token.issuer, {
+      tenant_id: admin.tenant_id,
+    });
     token["access_token"] = jwt;
     return { access_token: jwt };
   } catch (error) {
