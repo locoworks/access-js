@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.25
+
+### Patch Changes
+
+- 325897e: Introduce set password
+
 ## 0.0.24
 
 ### Patch Changes
