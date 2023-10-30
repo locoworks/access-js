@@ -57,12 +57,11 @@
     },
     "meta": {
       "label": "Meta",
-      "operations": {},
-      "ui": {
-        "detail": {
-          "display": true
-        }
-      }
+      "operations": {}
+    },
+    "password_set": {
+      "label": "password_set",
+      "operations": {}
     }
   },
   "relations": {
