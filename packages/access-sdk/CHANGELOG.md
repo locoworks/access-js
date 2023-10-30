@@ -1,5 +1,12 @@
 # @locoworks/access-sdk
 
+## 0.0.23
+
+### Patch Changes
+
+- be6f7f1: User token for tenant_id during get/update user
+- 618c41b: Add tenant_id to jwt
+
 ## 0.0.22
 
 ### Patch Changes
