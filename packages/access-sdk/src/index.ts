@@ -7,7 +7,10 @@ import UserCanRequestResetPasswordStory from "./stories/Users/CanRequestResetPas
 import UserCanResetPasswordStory from "./stories/Users/CanResetPassword";
 import UserCanSetPasswordStory from "./stories/Users/CanSetPassword";
 import UserCanFetchCurrentUserStory from "./stories/Users/CanFetchCurrentUser";
+import UserCanFetchUserStory from "./stories/Users/CanFetchUser";
 import UserCanUpdateCurrentUserStory from "./stories/Users/CanUpdateCurrentUser";
+import UserCanUpdateUserStory from "./stories/Users/CanUpdateUser";
+import UserCanDeleteUserStory from "./stories/Users/CanDeleteUser";
 import AccountsCrudStory from "./stories/Accounts/CRUD";
 import KeysCrudStory from "./stories/Keys/CRUD";
 import AdminsCrudStory from "./stories/Admins/CRUD";
@@ -58,8 +61,23 @@ const UserCanFetchCurrentUser = async (args: any) => {
   return result["respondResult"];
 };
 
+const UserCanFetchUser = async (args: any) => {
+  let result = await pahrStrategy(UserCanFetchUserStory, args);
+  return result["respondResult"];
+};
+
 const UserCanUpdateCurrentUser = async (args: any) => {
   let result = await pahrStrategy(UserCanUpdateCurrentUserStory, args);
+  return result["respondResult"];
+};
+
+const UserCanUpdateUser = async (args: any) => {
+  let result = await pahrStrategy(UserCanUpdateUserStory, args);
+  return result["respondResult"];
+};
+
+const UserCanDeleteUser = async (args: any) => {
+  let result = await pahrStrategy(UserCanDeleteUserStory, args);
   return result["respondResult"];
 };
 
@@ -152,7 +170,10 @@ export {
   UserCanSetPassword,
   UserCanAuthorize,
   UserCanFetchCurrentUser,
+  UserCanFetchUser,
   UserCanUpdateCurrentUser,
+  UserCanUpdateUser,
+  UserCanDeleteUser,
   AccountsCrud,
   KeysCrud,
   AdminsCrud,
