@@ -21,6 +21,7 @@ const authorize = () => {
 const handle = async ({ prepareResult }: StoryExecutionContext) => {
   try {
     const cie = AccessSDK.getEngine();
+    const accessConfig = AccessSDK.getConfig();
     // Validate prepareResult
     // Move all the business logic to a function
     // Abstract the single logic into a reusable function
@@ -79,6 +80,8 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
           password: prepareResult.password,
           tenant_id: prepareResult.tenant_id,
           meta: prepareResult.meta,
+          password_set:
+            accessConfig.requirePasswordSet === "true" ? false : true,
         },
         transformations: ["pick_first"],
       });

@@ -27,9 +27,10 @@ class AccessSDK {
       salt: string | undefined;
       publicKey: string | undefined;
       privateKey: string | undefined;
-      jwtExpiry: string | undefined;
-      importAlg: string | undefined;
-      encDecAlg: string | undefined;
+      jwtExpiry: "1d";
+      importAlg: "EdDSA";
+      encDecAlg: "EdDSA";
+      requirePasswordSet: "false";
     }
   ): AccessSDK {
     if (!AccessSDK.instance) {
