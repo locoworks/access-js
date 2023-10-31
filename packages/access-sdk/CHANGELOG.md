@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.26
+
+### Patch Changes
+
+- fef59b5: Introduce require password set feature
+
 ## 0.0.25
 
 ### Patch Changes
