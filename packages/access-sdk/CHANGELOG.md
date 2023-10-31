@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.27
+
+### Patch Changes
+
+- 1f8205a: Add get, update, delete users
+
 ## 0.0.26
 
 ### Patch Changes
