@@ -96,17 +96,42 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
         transformations: ["pick_first"],
       });
 
+      if (accessConfig.eventCallback !== undefined) {
+        accessConfig.eventCallback("user_registered", {
+          user: createdUser,
+          verification: createdVerification,
+        });
+      }
+
       return {
         message: "SuccessfullyRegistered",
         user_id: createdUser.id,
       };
     } else {
-      await cie.patch("verifications", {
+      let existingVerification2 = await cie.patch("verifications", {
         payload: {
           id: existingVerification.id,
         },
         transformations: ["pick_first"],
       });
+
+      let existingUser = await cie.read("users", {
+        filterBy: [
+          {
+            attribute: "id",
+            op: "eq",
+            value: existingVerification2.user_id,
+          },
+        ],
+        transformations: ["pick_first"],
+      });
+
+      if (accessConfig.eventCallback !== undefined) {
+        accessConfig.eventCallback("user_registered", {
+          user: existingUser,
+          verification: existingVerification2,
+        });
+      }
 
       return {
         message: "AlreadyRegisteredButNotVerified",
@@ -118,7 +143,6 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
 };
 
 const respond = ({ handleResult }: StoryExecutionContext) => {
-  console.log("handleResult log", handleResult);
   return handleResult;
 };
 

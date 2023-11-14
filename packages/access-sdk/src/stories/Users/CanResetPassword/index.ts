@@ -110,12 +110,10 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       };
     }
   } catch (error) {
-    console.log("Error in reset password", error);
     throw error;
   }
 };
 const respond = ({ handleResult }: StoryExecutionContext) => {
-  console.log("handleResult log", handleResult);
   return handleResult;
 };
 

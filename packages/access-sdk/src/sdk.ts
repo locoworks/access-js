@@ -31,6 +31,7 @@ class AccessSDK {
       importAlg: "EdDSA";
       encDecAlg: "EdDSA";
       requirePasswordSet: "false";
+      eventCallback: (event: any, meta: any) => {} | undefined;
     }
   ): AccessSDK {
     if (!AccessSDK.instance) {
