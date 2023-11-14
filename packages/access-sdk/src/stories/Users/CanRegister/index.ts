@@ -98,6 +98,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
 
       return {
         message: "SuccessfullyRegistered",
+        user_id: createdUser.id,
       };
     } else {
       await cie.patch("verifications", {
