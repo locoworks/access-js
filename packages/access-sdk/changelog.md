@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.28
+
+### Patch Changes
+
+- 3344f36: Introduce event callback
+
 ## 0.0.27
 
 ### Patch Changes
