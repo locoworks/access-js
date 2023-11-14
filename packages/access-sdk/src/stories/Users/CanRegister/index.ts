@@ -111,6 +111,8 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       let existingVerification2 = await cie.patch("verifications", {
         payload: {
           id: existingVerification.id,
+          token: "",
+          expires_at: "",
         },
         transformations: ["pick_first"],
       });

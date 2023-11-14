@@ -1,6 +1,7 @@
 import type { StoryExecutionContext } from "@locoworks/cijson-utils";
 import { pickKeysFromObject } from "@locoworks/cijson-utils";
 import AccessSDK from "../../../sdk";
+import { createTokenForUser } from "../../../utils/createToken";
 
 const isDateInPast = (jsDateTimeString: string, jsDateObject = new Date()) => {
   return new Date(Date.parse(jsDateTimeString + "Z")) < jsDateObject;
@@ -22,7 +23,35 @@ const authorize = () => {
 const handle = async ({ prepareResult }: StoryExecutionContext) => {
   try {
     const cie = AccessSDK.getEngine();
-    console.log("prepareResult in VerifyRegistration", prepareResult);
+    const accessConfig = AccessSDK.getConfig();
+
+    const existingAttribute: any = await cie.read("attributes", {
+      filterBy: [
+        {
+          attribute: "type",
+          op: "eq",
+          value: prepareResult.attribute_type,
+        },
+        {
+          attribute: "value",
+          op: "eq",
+          value: prepareResult.attribute_value,
+        },
+        {
+          attribute: "tenant_id",
+          op: "eq",
+          value: prepareResult.tenant_id,
+        },
+      ],
+      transformations: ["pick_first"],
+    });
+
+    if (existingAttribute !== null) {
+      return {
+        message: "AlreadyRegistered",
+      };
+    }
+
     // Find if there is an existing verification, by type/value
     const existingVerification: any = await cie.read("verifications", {
       filterBy: [
@@ -49,6 +78,34 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
     if (existingVerification !== null) {
       // If verification is present, then check if token is valid and date is not in past
       if (isDateInPast(existingVerification.expires_at)) {
+        let existingVerification2 = await cie.patch("verifications", {
+          payload: {
+            id: existingVerification.id,
+            token: "",
+            expires_at: "",
+          },
+          transformations: ["pick_first"],
+        });
+
+        let existingUser = await cie.read("users", {
+          filterBy: [
+            {
+              attribute: "id",
+              op: "eq",
+              value: existingVerification2.user_id,
+            },
+          ],
+          transformations: ["pick_first"],
+        });
+
+        if (accessConfig.eventCallback !== undefined) {
+          accessConfig.eventCallback("user_registered", {
+            scenario: "verification",
+            user: existingUser,
+            verification: existingVerification2,
+          });
+        }
+
         return {
           message: "TokenExpired",
         };
@@ -77,13 +134,27 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
         transformations: ["pick_first"],
       });
 
+      const user: any = await cie.read("users", {
+        filterBy: [
+          {
+            attribute: "id",
+            op: "eq",
+            value: existingVerification.user_id,
+          },
+        ],
+        transformations: ["pick_first"],
+      });
+
+      const token = await createTokenForUser(user);
+
       return {
         message: "VerifiedSuccessfully",
+        ...token,
       };
     } else {
       // If verification is not present, then user didn't register yet
       return {
-        message: "InvalidToken",
+        message: "NotRegistered",
       };
     }
   } catch (error) {
