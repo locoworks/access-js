@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.29
+
+### Patch Changes
+
+- ad120be: Return access token after registration
+
 ## 0.0.28
 
 ### Patch Changes
