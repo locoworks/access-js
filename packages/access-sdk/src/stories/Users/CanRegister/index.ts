@@ -97,7 +97,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       });
 
       if (accessConfig.eventCallback !== undefined) {
-        accessConfig.eventCallback("user_registered", {
+        await accessConfig.eventCallback("user_registered", {
           user: createdUser,
           verification: createdVerification,
         });
@@ -129,7 +129,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
       });
 
       if (accessConfig.eventCallback !== undefined) {
-        accessConfig.eventCallback("user_registered", {
+        await accessConfig.eventCallback("user_registered", {
           user: existingUser,
           verification: existingVerification2,
         });
