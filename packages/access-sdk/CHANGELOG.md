@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.30
+
+### Patch Changes
+
+- 2f016dd: Fix await issue
+
 ## 0.0.29
 
 ### Patch Changes
