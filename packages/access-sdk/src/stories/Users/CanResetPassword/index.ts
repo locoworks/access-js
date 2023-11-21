@@ -3,7 +3,7 @@ import AccessSDK from "../../../sdk";
 import type { StoryExecutionContext } from "@locoworks/cijson-utils";
 
 const isDateInPast = (jsDateTimeString: string, jsDateObject = new Date()) => {
-  return new Date(jsDateTimeString) < jsDateObject;
+  return new Date(Date.parse(jsDateTimeString + "Z")) < jsDateObject;
 };
 
 const prepare = (executionContext: any) => {
@@ -22,6 +22,7 @@ const authorize = () => {
 const handle = async ({ prepareResult }: StoryExecutionContext) => {
   try {
     const cie = AccessSDK.getEngine();
+    const accessConfig = AccessSDK.getConfig();
 
     const existingAttribute: any = await cie.read("attributes", {
       filterBy: [
@@ -74,6 +75,33 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
     if (existingAttribute != null && existingVerification !== null) {
       //check if the token in expired
       if (isDateInPast(existingVerification.expires_at)) {
+        let existingVerification2 = await cie.patch("verifications", {
+          payload: {
+            id: existingVerification.id,
+            token: "",
+            expires_at: "",
+          },
+          transformations: ["pick_first"],
+        });
+
+        let existingUser = await cie.read("users", {
+          filterBy: [
+            {
+              attribute: "id",
+              op: "eq",
+              value: existingVerification2.user_id,
+            },
+          ],
+          transformations: ["pick_first"],
+        });
+
+        if (accessConfig.eventCallback !== undefined) {
+          await accessConfig.eventCallback("user_request_for_reset_password", {
+            user: existingUser,
+            verification: existingVerification2,
+          });
+        }
+
         return {
           message: "TokenExpired",
         };

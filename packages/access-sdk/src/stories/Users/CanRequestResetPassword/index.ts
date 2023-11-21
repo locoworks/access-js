@@ -18,6 +18,7 @@ const authorize = () => {
 const handle = async ({ prepareResult }: StoryExecutionContext) => {
   try {
     const cie = AccessSDK.getEngine();
+    const accessConfig = AccessSDK.getConfig();
 
     const existingAttribute: any = await cie.read("attributes", {
       filterBy: [
@@ -85,22 +86,68 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
         transformations: ["pick_first"],
       });
       console.log("Create new verification", createdVerification);
+
+      let existingUser = await cie.read("users", {
+        filterBy: [
+          {
+            attribute: "id",
+            op: "eq",
+            value: existingAttribute.user_id,
+          },
+        ],
+        transformations: ["pick_first"],
+      });
+
+      if (accessConfig.eventCallback !== undefined) {
+        await accessConfig.eventCallback("user_request_for_reset_password", {
+          user: existingUser,
+          verification: createdVerification,
+        });
+      }
+
       return {
         message: "SuccessfullyCreatedRequestResetPassword",
       };
     }
     if (existingAttribute !== null && existingVerification !== null) {
       // User exists and can created verification earlier, update verication
-      await cie.update("verifications", {
+      // let existingVerification2 = await cie.update("verifications", {
+      //   payload: {
+      //     user_id: existingAttribute.user_id,
+      //     attribute_type: prepareResult.attribute_type,
+      //     attribute_value: prepareResult.attribute_value,
+      //     tenant_id: prepareResult.tenant_id,
+      //     purpose: "reset-password",
+      //   },
+      //   transformations: ["pick_first"],
+      // });
+
+      let existingVerification2 = await cie.patch("verifications", {
         payload: {
-          user_id: existingAttribute.user_id,
-          attribute_type: prepareResult.attribute_type,
-          attribute_value: prepareResult.attribute_value,
-          tenant_id: prepareResult.tenant_id,
-          purpose: "reset-password",
+          id: existingVerification.id,
+          token: "",
+          expires_at: "",
         },
         transformations: ["pick_first"],
       });
+
+      let existingUser = await cie.read("users", {
+        filterBy: [
+          {
+            attribute: "id",
+            op: "eq",
+            value: existingAttribute.user_id,
+          },
+        ],
+        transformations: ["pick_first"],
+      });
+
+      if (accessConfig.eventCallback !== undefined) {
+        await accessConfig.eventCallback("user_request_for_reset_password", {
+          user: existingUser,
+          verification: existingVerification2,
+        });
+      }
 
       return {
         message: "SuccessfullyUpdatedRequestResetPassword",
