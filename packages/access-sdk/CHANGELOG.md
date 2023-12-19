@@ -1,5 +1,12 @@
 # @locoworks/access-sdk
 
+## 0.0.31
+
+### Patch Changes
+
+- 5a23ccb: Implement user_request_for_reset_password
+- 905a066: Send user_request_for_reset_password
+
 ## 0.0.30
 
 ### Patch Changes
