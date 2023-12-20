@@ -85,7 +85,7 @@ const handle = async ({ prepareResult }: StoryExecutionContext) => {
         },
         transformations: ["pick_first"],
       });
-      console.log("Create new verification", createdVerification);
+      // console.log("Create new verification", createdVerification);
 
       let existingUser = await cie.read("users", {
         filterBy: [
