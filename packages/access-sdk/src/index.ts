@@ -16,6 +16,8 @@ import KeysCrudStory from "./stories/Keys/CRUD";
 import AdminsCrudStory from "./stories/Admins/CRUD";
 import KeysRecognizeStory from "./stories/Keys/Recognize";
 import AccessSDK from "./sdk";
+import { decodeJWT } from "./utils/tokenHelpers";
+
 
 // console.log("users", users);
 
@@ -179,4 +181,5 @@ export {
   AdminsCrud,
   KeysRecognize,
   AccessSDK,
+  decodeJWT
 };
