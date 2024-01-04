@@ -1,5 +1,11 @@
 # @locoworks/access-sdk
 
+## 0.0.32
+
+### Patch Changes
+
+- 882ee9e: Exposed decodeJWT function
+
 ## 0.0.31
 
 ### Patch Changes
